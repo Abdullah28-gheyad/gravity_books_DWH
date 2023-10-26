@@ -40,10 +40,10 @@ Data Transformation: The data was transformed to create denormalized tables for 
 
 Data Loading: The transformed data was loaded into the data warehouse tables.
 
-Data Warehouse Schema
+# Data Warehouse Schema
 ![StarSchema](https://github.com/Abdullah28-gheyad/gravity_books_DWH/assets/68871710/1650f95f-d04a-4dd0-8d69-68a14906f55c)
 
-Dimensions
+# Dimensions
 ![Customer Dim](https://github.com/Abdullah28-gheyad/gravity_books_DWH/assets/68871710/aa080252-31a7-4f80-8317-3c5b58f04a18)
 ![BooksFact](https://github.com/Abdullah28-gheyad/gravity_books_DWH/assets/68871710/2d80bb1a-c4af-4688-8052-e476c96d25ca)
 ![Book Dim](https://github.com/Abdullah28-gheyad/gravity_books_DWH/assets/68871710/fdc8e80c-13ad-4bf4-b408-d3db085191ab)
