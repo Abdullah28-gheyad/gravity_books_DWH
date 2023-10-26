@@ -1,0 +1,53 @@
+create table Customer_Dim
+(
+	Customer_SK int identity (1,1) PRIMARY KEY , 
+	Customer_id int not null , 
+	First_Name VARCHAR(200) , 
+	Last_Name VARCHAR (200) , 
+	email VARCHAR (350) , 
+	Address_Status VARCHAR(30) , 
+	street_number VARCHAR(10),
+    street_name VARCHAR(200),
+	city VARCHAR(100),
+	country_name VARCHAR(200),
+	valid_from datetime , 
+	valid_to datetime
+)
+drop table Customer_Dim
+
+create table Book_Dim
+(
+	Book_SK int identity (1,1) PRIMARY KEY , 
+	Book_id int not null , 
+	title VARCHAR(400),
+	isbn13 VARCHAR(13) not null,
+    num_pages INT,
+	publication_date DATE,
+    author_name VARCHAR(400),
+    language_code VARCHAR(8),
+    language_name VARCHAR(50),
+    publisher_name VARCHAR(400),	
+	valid_from datetime , 
+	valid_to datetime
+)
+drop table Book_Dim
+
+
+create table Order_Fact
+(
+	Customer_SK int not null , 
+	Book_SK int not null , 
+	Date_SK int not null , 
+	ship_cost DECIMAL(6, 2), 
+    price DECIMAL(5, 2) , 
+	CONSTRAINT fk_customer FOREIGN KEY (Customer_SK) REFERENCES Customer_Dim (Customer_SK),
+    CONSTRAINT fk_Book FOREIGN KEY (Book_SK) REFERENCES Book_Dim (Book_SK),
+    CONSTRAINT fk_Date FOREIGN KEY (Date_SK) REFERENCES DimDate (DateSK)
+)
+
+drop table Order_Fact
+
+
+select * from Order_Fact
+select * from Book_Dim
+

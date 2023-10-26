@@ -1,0 +1,11 @@
+select B.book_id , title , isbn13 , 
+num_pages , publication_date , 
+author_name  , language_code , language_name , publisher_name
+from book B left OUTER join book_author BA
+on B.book_id = BA.book_id 
+left OUTER join author A 
+on A.author_id = BA.author_id
+left OUTER join book_language BL
+on B.language_id = BL.language_id
+left OUTER join publisher P
+on B.publisher_id = P.publisher_id

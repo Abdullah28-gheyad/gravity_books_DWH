@@ -1,0 +1,13 @@
+select C.customer_id , first_name , 
+last_name , email ,  address_status, 
+street_number , street_name , city , 
+country_name
+from customer C
+LEFT OUTER JOIN customer_address CA
+on C.customer_id = CA.customer_id
+LEFT OUTER JOIN address_status A_S
+on CA.status_id = A_S.status_id 
+LEFT OUTER JOIN address A
+on CA.address_id = A.address_id
+LEFT OUTER JOIN country CO
+on CO.country_id = A.country_id
